@@ -1,5 +1,5 @@
 import { A } from '@solidjs/router';
-import { Component } from 'solid-js';
+import { Component, Show, createSignal } from 'solid-js';
 import {
   Dialog,
   DialogBackdrop,
@@ -11,6 +11,7 @@ import {
   DialogTrigger,
 } from '@ark-ui/solid';
 import { Portal } from 'solid-js/web';
+import { VsMenu, VsChromeClose } from 'solid-icons/vs';
 
 const Header: Component<{}> = (props) => {
   return (
@@ -22,32 +23,21 @@ const Header: Component<{}> = (props) => {
         </A>
       </div>
       {/* desktop Nav */}
-      <nav class=' hidden flex-1 space-x-12 text-right   md:block'>
+      <nav class=' hidden flex-1 space-x-12 text-right md:block'>
         <A
-          href='/'
+          href='#audio-engine'
           class='rounded-lg border border-neutral-50 px-4 py-2 hover:border-neutral-400 hover:text-neutral-400'>
           Get Started
         </A>
       </nav>
       {/* mobile nav */}
       <div class='flex-1 text-right md:hidden'>
-        <Dialog>
-          <DialogTrigger>
-            <button>Open Dialog</button>
-          </DialogTrigger>
-          <Portal>
-            <DialogBackdrop />
-            <DialogContainer>
-              <DialogContent>
-                <DialogTitle>Dialog Title</DialogTitle>
-                <DialogDescription>Dialog Description</DialogDescription>
-                <DialogCloseTrigger>
-                  <button>Close</button>
-                </DialogCloseTrigger>
-              </DialogContent>
-            </DialogContainer>
-          </Portal>
-        </Dialog>
+        {' '}
+        <A
+          href='/'
+          class='rounded-lg border border-neutral-50 px-4 py-2 hover:border-neutral-400 hover:text-neutral-400'>
+          Get Started
+        </A>
       </div>
     </header>
   );
